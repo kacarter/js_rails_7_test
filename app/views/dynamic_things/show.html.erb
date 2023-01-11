@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dynamic_thing %>
+
+<div>
+  <%= link_to "Edit this dynamic thing", edit_dynamic_thing_path(@dynamic_thing) %> |
+  <%= link_to "Back to dynamic things", dynamic_things_path %>
+
+  <%= button_to "Destroy this dynamic thing", @dynamic_thing, method: :delete %>
+</div>

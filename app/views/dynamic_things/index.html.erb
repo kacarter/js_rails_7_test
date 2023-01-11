@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dynamic things</h1>
+
+<div id="dynamic_things">
+  <% @dynamic_things.each do |dynamic_thing| %>
+    <%= render dynamic_thing %>
+    <p>
+      <%= link_to "Show this dynamic thing", dynamic_thing %>
+    </p>
+  <% end %>
+</div>
+
+<div data-controller="dynamic-toggle" data-dynamic-toggle-toggle-class="hidden">
+  <button data-action="dynamic-toggle#do_toggle">Hide/Show</button>
+  <p data-dynamic-toggle-target="content">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
+
+<%= link_to "New dynamic thing", new_dynamic_thing_path %>

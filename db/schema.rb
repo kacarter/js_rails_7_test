@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_26_030655) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_10_235150) do
+  create_table "dynamic_things", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.date "expiration_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "things", force: :cascade do |t|
     t.string "name"
     t.boolean "active"

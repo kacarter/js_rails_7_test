@@ -1,0 +1,34 @@
+<div data-controller="dynamic-datepicker" data-dynamic-datepicker-date-class="date">
+<%= form_with(model: dynamic_thing) do |form| %>
+  <% if dynamic_thing.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(dynamic_thing.errors.count, "error") %> prohibited this dynamic_thing from being saved:</h2>
+
+      <ul>
+        <% dynamic_thing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :active, style: "display: block" %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div>
+    <%= form.label :expiration_date, style: "display: block" %>
+    <%= form.text_field :expiration_date, provide: "datepicker", class: "date" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

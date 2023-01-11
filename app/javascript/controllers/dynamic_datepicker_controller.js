@@ -2,7 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="dynamic-datepicker"
 export default class extends Controller {
+  static classes = ["date"];
   connect() {
-    $("." + data.get("class")).datepicker({dateFormat: "mm/dd/yy"});
+    $("." + this.dateClass).datepicker({dateFormat: "mm/dd/yy"});
   }
 }

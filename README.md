@@ -70,8 +70,10 @@ datepicker and a visibility toggle in this app.
 
 ## Bonus
 
-You can create more dynamic, reusable controllers by defining targets in your Stimulus controller and passing in variables
-when you attach the Stimulus controller to your HTML. You can see this in the `dynamic_toggle_controller.js`
+You can create more dynamic, reusable controllers by defining targets in your Stimulus controller and passing in a specific
+class when you attach the Stimulus controller to your HTML. You can also specify a target in your HTML. You can see
+examples of this in `app/javascript/controllers/dynamic_toggle_controller.js` and `app/views/dynamic_things/index.html.erb`
+and `app/javascript/controllers/dynamic_datepicker_controller.js` and `app/views/dynamic_things/_form.html.erb`
 
 ## References
 
@@ -80,13 +82,3 @@ when you attach the Stimulus controller to your HTML. You can see this in the `d
 * [Getting JavaScript sprinkles to work on page load without turning off Stimulus](https://stackoverflow.com/questions/72902225/javascript-stops-working-when-a-link-is-clicked): 
 this took me FOREVER to find, I kept finding SO results that said to turn off Turbo instead 😞
 * [Installing jQuery with Rails 7](https://stackoverflow.com/questions/70921378/how-to-install-jquery-and-bootstrap-in-rails-7-app-using-esbuild-without-webpac)
-
-asdfsdfa
-
-asdf
-ads
-fas
-fda
-sd
-as
-dsf

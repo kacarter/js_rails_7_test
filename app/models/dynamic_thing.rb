@@ -1,0 +1,2 @@
+class DynamicThing < ApplicationRecord
+end

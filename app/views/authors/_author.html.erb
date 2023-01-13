@@ -1,0 +1,19 @@
+<div id="<%= dom_id author %>">
+  <p>
+    <strong>Name:</strong>
+    <%= author.name %>
+  </p>
+
+  <% author.books.each do |book| %>
+    <p>
+      <strong>Book Name:</strong>
+      <%= book.name %>
+    </p>
+
+    <p>
+      <strong>Publication Date:</strong>
+      <%= book.publication_date %>
+    </p>
+  <% end %>
+
+</div>

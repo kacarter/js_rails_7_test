@@ -1,0 +1,32 @@
+<%= form_with(model: author) do |form| %>
+  <% if author.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+        <% author.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <h3>Books</h3>
+  <div id='books'>
+    <%= form.fields_for :books do |book| %>
+      <%= render 'book_fields', form: book %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add Book', form, :books, form_name: 'form' %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

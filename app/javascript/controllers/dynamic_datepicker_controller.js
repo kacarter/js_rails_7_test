@@ -4,6 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static classes = ["date"];
   connect() {
-    $("." + this.dateClass).datepicker({dateFormat: "mm/dd/yy"});
+    $("." + this.dateClass).datepicker({dateFormat: "yy-mm-dd"});
   }
 }

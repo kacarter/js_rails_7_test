@@ -1,0 +1,11 @@
+<div class='nested-fields' data-controller="dynamic-datepicker" data-dynamic-datepicker-date-class="date">
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :publication_date %>
+    <%= form.text_field :publication_date, provide: "datepicker", class: "date" %>
+  </div>
+  <%= link_to_remove_association "Remove Book", form %>
+</div>

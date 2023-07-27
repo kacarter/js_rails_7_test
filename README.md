@@ -34,6 +34,12 @@ pin "jquery", to: "jquery.min.js", preload: true
 pin "jquery_ujs", to: "jquery_ujs.js", preload: true
 pin "jquery-ui", to: "jquery-ui.js", preload: true
 ```
+* In `app/javascript/application.js` add:
+```
+import "jquery"
+import "jquery_ujs"
+import "jquery-ui"
+```
 
 ## To get JavaScript working with Turbo and Stimulus
 
@@ -92,11 +98,19 @@ form, such as adding a datepicker to one of the form fields in the partial, you 
 the same way you would normally use it. There is an example of cocoon and a datepicker in `app/views/authors/_form.html.erb`
 and `app/views/authors/_book_fields.html.erb`
 
+## The magic of Turbo
+
+Turbo allows you to provide some interactivity without having to write a line of JavaScript. This is why it's so worth it
+to figure out how to work WITH Turbo instead of just turning it off. A fantastic simple example of an autocomplete
+filter can be found in `app/views/autocomplete_things/index.html.erb` and
+`app/javascript/controllers/autocomplete_controller.js`.
+
 ## References
 
-* [Toggle example and info on writing reusable Stimulus controllers](https://boringrails.com/articles/better-stimulus-controllers/) 
+* [Toggle example and info on writing reusable Stimulus controllers](https://boringrails.com/articles/better-stimulus-controllers/) -
 note that some of the syntax has changed since the guide at this link was written
 * [Stimulus best practices](https://www.betterstimulus.com/)
-* [Getting JavaScript sprinkles to work on page load without turning off Stimulus](https://stackoverflow.com/questions/72902225/javascript-stops-working-when-a-link-is-clicked): 
+* [Getting JavaScript sprinkles to work on page load without turning off Stimulus](https://stackoverflow.com/questions/72902225/javascript-stops-working-when-a-link-is-clicked) - 
 this took me FOREVER to find, I kept finding SO results that said to turn off Turbo instead 😞
 * [Installing jQuery with Rails 7](https://stackoverflow.com/questions/70921378/how-to-install-jquery-and-bootstrap-in-rails-7-app-using-esbuild-without-webpac)
+* [Autocomplete filter](https://mateusnava.com/posts/autocomplete-with-rails-7-hotwired-turbo)

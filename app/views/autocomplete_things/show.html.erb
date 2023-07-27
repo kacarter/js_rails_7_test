@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @autocomplete_thing %>
+
+<div>
+  <%= link_to "Edit this autocomplete thing", edit_autocomplete_thing_path(@autocomplete_thing) %> |
+  <%= link_to "Back to autocomplete things", autocomplete_things_path %>
+
+  <%= button_to "Destroy this autocomplete thing", @autocomplete_thing, method: :delete %>
+</div>

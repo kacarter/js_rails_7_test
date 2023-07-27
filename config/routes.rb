@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :autocomplete_things
   resources :authors
   resources :dynamic_things
   resources :things

@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Autocomplete things</h1>
+
+<%= form_with url: autocomplete_things_path, method: :get, data: {'turbo-frame': 'autocomplete_things'} do |form| %>
+  <% form.search_field :name, autofocus: true %>
+<% end %>
+
+<%= turbo_frame_tag :autocomplete_things do %>
+  <div id="search-result">
+    <%= pluralize(@autocomplete_things.count, 'autocomplete thing') %> found
+  </div>
+
+  <div id="autocomplete-things-container">
+    <% @autocomplete_things.each do |autocomplete_thing| %>
+      <%= render autocomplete_thing %>
+      <p>
+        <%= link_to "Show this autocomplete thing", autocomplete_thing %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "New autocomplete thing", new_autocomplete_thing_path %>

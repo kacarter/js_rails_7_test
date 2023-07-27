@@ -1,0 +1,27 @@
+<%= form_with(model: autocomplete_thing) do |form| %>
+  <% if autocomplete_thing.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(autocomplete_thing.errors.count, "error") %> prohibited this autocomplete_thing from being saved:</h2>
+
+      <ul>
+        <% autocomplete_thing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :random_field, style: "display: block" %>
+    <%= form.text_field :random_field %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

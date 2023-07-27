@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_13_004617) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_25_051622) do
   create_table "authors", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "autocomplete_things", force: :cascade do |t|
+    t.string "name"
+    t.string "random_field"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

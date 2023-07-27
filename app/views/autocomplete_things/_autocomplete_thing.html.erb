@@ -1,0 +1,12 @@
+<div id="<%= dom_id autocomplete_thing %>">
+  <p>
+    <strong>Name:</strong>
+    <%= highlight(autocomplete_thing.name, params[:name]) %>
+  </p>
+
+  <p>
+    <strong>Random field:</strong>
+    <%= autocomplete_thing.random_field %>
+  </p>
+
+</div>
